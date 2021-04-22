@@ -14,7 +14,7 @@ use `exe.make` file on `TELOS`. You need the following installed libraries:
 - code degrades the map to an intermediate resolution map and computes the smooth low-resolution covariance matrix from there. Therefore, only pixel inside a pre-defined beam width are taken into account. All pixels outside of the beam are set to zero for the computation of pixel i. 
 
 ## speed
-This code reduced the number of operation from $\mathcal{O}(N_{\rm pix})$
+This code reduced the number of operation from $\mathcal{O}(N_{\rm pix})$ $`\sqrt{2}`$
 
 ## cite
 Please cite:
