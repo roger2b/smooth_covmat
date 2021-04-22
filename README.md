@@ -1,8 +1,12 @@
-# smooth_covmat
+# Low resolution smoothed covariance matrix
 Very fast Fortran90 code to make low-resolution smooth covariance matrices from the Planck hitcount maps.
 
 ## Usage of code
 - define directories: `basedir, mapname, outdat` where high-resolution *Planck* maps are stored (publicly available at: [Planck Archive](http://pla.esac.esa.int))
+- choose smoothing: 
+1. cosine window smoothing 
+2. Reijo smoothing (used in Planck papers)
+3. Reijo smoothing + pixelwindow
 
 ## compile code
 use `exe.make` file on `TELOS`. You need the following installed libraries:
