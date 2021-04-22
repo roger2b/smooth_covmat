@@ -14,7 +14,9 @@ use `exe.make` file on `TELOS`. You need the following installed libraries:
 - code degrades the map to an intermediate resolution map and computes the smooth low-resolution covariance matrix from there. Therefore, only pixel inside a pre-defined beam width are taken into account. All pixels outside of the beam are set to zero for the computation of pixel i. 
 
 ## speed
-This code reduced the number of operation from O(N_pix ** 2) to 
+This code reduced the number of operation from O(N_pix_lowres ** 2 * N_pix_imres) to O(N_pix_lowres ** 2 * N_pix_imres') where N_pix_imres' are only the pixels inside of the beam, meaning that instead of N_pix_imres=12*128*128 we have approximately a few hundred pixels in N_pix_imres' typically which reduced the number of operations by approx. 10000. This increased computational efficiency comes at basically no loss of information for the user. The differences are below 1.e-5 for the user. Previous computation time was approx. 3 days, now 30 minutes (on a single CPU). 
+
+I can share a parallelised version that distribitues each 'larger' pixel on a seperate CPU and then merges them again afterwards: results are below 1 min. 
 
 ## cite
 Please cite:
